@@ -1,6 +1,6 @@
-= Chauncey
+= Chace
 
-Chauncey is a little Ruby library for expressing uncertainty in your code. Maybe you always wanted to program with probability?
+Chace is a little Ruby library for expressing uncertainty in your code. Maybe you always wanted to program with probability?
 
 The idea originated with Numeric#percent and Kernel#maybe, which Marcel Molina posted to Projectionist, a tumblelog.  This led to various snippets for executing code in a fuzzier way than usual.  You get such handy, wishy-washy methods as:
 
