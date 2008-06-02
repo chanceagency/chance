@@ -16,7 +16,7 @@ module Kernel
   end
   
   def almost_never(&block)
-    5.percent.chance.of &block
+    1.percent.chance.of &block
   end
 end
 
