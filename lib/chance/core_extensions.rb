@@ -59,7 +59,7 @@ class Array
     picks
   end
   
-  def pick~(percentage)
+  def pick_about(percentage)
     select do |element|
       percentage.chance.happens?
     end
