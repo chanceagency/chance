@@ -17,4 +17,12 @@ class ChanceTest < Test::Unit::TestCase
   def test_should_have_equality_method
     assert_equal 5.percent.chance, 5.percent.chance
   end
+  
+  def test_chance_case
+    
+    Chance.case do |chance_case|
+      puts chance_case.inspect
+    end
+    
+  end
 end
