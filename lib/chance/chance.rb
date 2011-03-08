@@ -3,32 +3,24 @@ class Chance
   alias :happens? :happens
   include Comparable
   
-  # 10, 20, 70, 80
-  # n = 50
-  
-  # 70, 20, 10
-  # 0..10, 0..20, 0..100 
-  
-  
   def self.case(*chances)
     raise "Chances don't add to 100" unless chances.inject(0) {|sum, chance| sum + chance.to_f } == 100
     ranges = []
     chances = chances.sort_by{|c| c.to_f}
-    # chances = [2,8,20,70]
-
     chances.each_with_index do |chance, i|
       chance = chance.to_f
-      if i == 0
-        range = 0..chance
-      elsif i == chances.size - 1
-        range = @last_chance..100
-      elsif @last_chance
-        range = @last_chance..chance
-      end
+      range = 
+        if i == 0
+          0..chance
+        elsif i == chances.size - 1
+          @last_chance..100
+        elsif @last_chance
+          @last_chance..chance
+        end
       @last_chance = range.begin
       ranges << range
     end
-    num = rand(100)
+    num = Kernel.rand(100)
     ranges.each_with_index do |r, i|
       if r.include? num
         return chances[i].event.call
