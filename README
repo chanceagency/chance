@@ -19,4 +19,5 @@ maybe {rotate_logs}
 
 By default, maybe is 50/50.  You can also use "probably", "rarely" and "almost_never", or just create your own Chance object like so:
 
-puts 30.percent.chance.of { "rain" }  
+puts 30.percent.chance.of { "rain" }
+=> Happenstance

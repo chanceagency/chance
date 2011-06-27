@@ -4,11 +4,23 @@ class ChanceCaseTest < Test::Unit::TestCase
   
   def test_a_full_case_statement
     outcome = Chance.case(
-      2.percent.chance.will {'knives'},
-      8.percent.chance.will {'sun'},
+      70.percent.chance.will {'snow'},
       20.percent.chance.will {'sleet'},
-      70.percent.chance.will {'snow'}
+      8.percent.chance.will {'sun'},
+      2.percent.chance.will {'knives'}
     )
+
+    outcome = Possibility do ||
+      20.percent.chance.of {'sleet'}
+      70.percent.chance.of {'snow'}
+    end
+
+    outcome = Inevitability do ||
+      10.percent.chance.of {'sun'}
+      20.percent.chance.of {'sleet'}
+      70.percent.chance.of {'snow'}
+    end
+    
     assert %w(rain sleet snow knives).include?(outcome)
   end
   
