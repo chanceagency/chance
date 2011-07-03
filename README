@@ -7,7 +7,7 @@ The idea originated with Numeric#percent and Kernel#maybe, which Marcel Molina p
 Date#at_some_point rather than Date#midnight
 Array#pick(percentage) rather than iterating over every element
 
-"maybe" is a Kernel method that randomly evaluates to true or false when it is called.  
+"maybe" is a Kernel method that randomly evaluates to true or false when it is called.
 @bob.lucky_winner? = maybe
 # => true
 @chauncey.lucky_winner? = maybe
@@ -19,5 +19,9 @@ maybe {rotate_logs}
 
 By default, maybe is 50/50.  You can also use "probably", "rarely" and "almost_never", or just create your own Chance object like so:
 
-puts 30.percent.chance.of { "rain" }
-=> Happenstance
+30.percent.chance.of { "rain" }
+
+== Running examples ==
+If you have the bundler gem installed, just run
+
+bundle exec rake

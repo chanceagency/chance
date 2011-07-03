@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/spec_helper'
+require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Chance do
   before do
@@ -8,11 +8,15 @@ describe Chance do
     @fat_chance = 10.percent.chance # include Sarcasm
   end
 
-  it "should have percentage odds" do
+  it "can be created from a Percentage" do
+    Percentage.new(20).chance.should be_kind_of Chance
+  end
+
+  it "has #odds expressed as a Percentage" do
     @chance.odds.should be_kind_of Percentage
   end
 
-  it "should be Comparable" do
+  it "should be comparable with another Chance" do
     @chance.should be > @fat_chance
     @chance.should be == @second_chance
     @chance.should be < @good_chance
@@ -26,7 +30,7 @@ describe Chance do
         8.percent.chance.will {'sun'},
         2.percent.chance.will {'knives'}
       )
-      %w(rain sleet snow knives).should include(outcome)
+      %w(sun sleet snow knives).should include(outcome)
     end
 
     it "generally evaluates to the expected outcome with stacked odds" do

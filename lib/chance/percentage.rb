@@ -12,7 +12,7 @@ class Percentage
   end
 
   def chance
-    Chance.new(self)
+    Chance.new self
   end
 
   def to_f
