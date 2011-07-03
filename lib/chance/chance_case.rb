@@ -1,6 +1,5 @@
 class ChanceCase
   attr_reader :outcome
-  
 
   def self.test(&block)
   	puts 'Here goes:'
