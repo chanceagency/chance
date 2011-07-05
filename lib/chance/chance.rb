@@ -2,14 +2,14 @@ class Chance
   attr_reader :odds, :happens, :event
   alias :happens? :happens
   include Comparable
-  
+
   def self.case(*chances)
     raise "Chances don't add to 100" unless chances.inject(0) {|sum, chance| sum + chance.to_f } == 100
     ranges = []
     chances = chances.sort_by{|c| c.to_f}
     chances.each_with_index do |chance, i|
       chance = chance.to_f
-      range = 
+      range =
         if i == 0
           0..chance
         elsif i == chances.size - 1
@@ -27,7 +27,7 @@ class Chance
       end
     end
   end
-  
+
   def initialize(percent)
     @odds = percent
     @happens = @odds.to_f > Kernel.rand(100)
@@ -46,7 +46,7 @@ class Chance
     odds.to_f
   end
   alias :value :to_f
-  
+
   def to_s
     "A #{odds.to_f} percent chance"
   end
@@ -54,14 +54,14 @@ class Chance
   def *(other_chance)
     Chance.new(self.odds.of(chance.odds.to_f))
   end
-  
+
   def <=>(other_chance)
     odds.to_f <=> other_chance.to_f
   end
-  
+
   def identical(other_chance)
     self == other_chance && self.happens? == other.happens?
   end
   alias :identical? :identical
-  
+
 end

@@ -14,4 +14,14 @@ describe Percentage do
     Percentage.new(10).should be < Percentage.new(15)
     Percentage.new(15).should be > Percentage.new(10)
   end
+
+  it "can get a Percentage of a number" do
+    result = 50.percent.of 50
+    result.should == 25
+  end
+
+  it "can get a Percentage of a Percentage" do
+    result = 25.percent.of 90.percent
+    result.should == 22.5.percent
+  end
 end

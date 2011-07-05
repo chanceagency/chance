@@ -12,7 +12,7 @@ class Die
   end
 
   def roll
-    rand(sides + 1).to_i
+    rand(sides).to_i + 1
   end
 
   def *(other_die)
@@ -23,9 +23,3 @@ class Die
     odds.to_f
   end
 end
-
-# @d1 = Die.new(6)
-# @d2 = Die.new(6)
-#
-# @2d6_odds = @d1.odds * @d2.odds
-# puts @2d6_odds

@@ -4,8 +4,8 @@ class SchroedingerCat
   def initialize
     @alive = nil
   end
-  def alive
-    @cat ||= maybe
+  def alive?
+    @alive ||= maybe
   end
 end
 
