@@ -10,19 +10,34 @@ Array#pick(percentage) rather than iterating over every element
 
 "maybe" is a Kernel method that randomly evaluates to true or false when it is called.
 
-`@bob.lucky_winner? = maybe`
-# => true
-`@chauncey.lucky_winner? = maybe`
-# => false
+    bob.lucky_winner? = maybe
+    # => true
 
-When supplied with a block, it will call it. Or not. Half of the time it just returns nil. For example
+    chauncey.lucky_winner? = maybe
+    # => false
 
-`maybe {rotate_logs}`
+Maybe can also be supplied with a block, which will be called only if the Chance happens:
 
-By default, maybe is 50/50.  You can also use "probably", "rarely" and "almost_never", or just create your own Chance object like so:
+    maybe do
+      rotate_logs
+    end
 
-`30.percent.chance.of { "rain" }`
+Behind the scenes, `maybe` is just constructing a Chance object. It's equivalent to the statement `50.percent.chance.of {rotate_logs}`
 
-Running examples
+By themselves, Chance objects either "happen" or they don't- the probability for each is evaluated the first time you call `Chance.happen?`, and thereafter it's set in stone. See the schroedinger.rb example if this interests you.
+
+Chance Case Statements
+--------------------
+
+Chance Cases take any number of args, each one being a probability statement with an outcome block attached.  The probabilities must add to 100 percent (sorry, for once in your life you will have to give less than 110%).  Only one outcome will be evaluated, as you would expect:
+
+  outcome = Chance.case(
+    70.percent.chance.will {'snow'},
+    20.percent.chance.will {'sleet'},
+    8.percent.chance.will {'sun'},
+    2.percent.chance.will {'knives'}
+  )
+
+Running examples and specs
 ----------------
-Make sure you have Bundler installed- then run  `bundle exec rake`.
+Check out the specs for a better idea of how to use Chance. Make sure you have Bundler installed- then run  `bundle exec rake`.
