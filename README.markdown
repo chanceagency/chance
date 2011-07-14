@@ -31,12 +31,12 @@ Chance Case Statements
 
 Chance Cases take any number of args, each one being a probability statement with an outcome block attached.  The probabilities must add to 100 percent (sorry, for once in your life you will have to give less than 110%).  Only one outcome will be evaluated, as you would expect:
 
-  outcome = Chance.case(
-    70.percent.chance.will {'snow'},
-    20.percent.chance.will {'sleet'},
-    8.percent.chance.will {'sun'},
-    2.percent.chance.will {'knives'}
-  )
+    outcome = Chance.case(
+      70.percent.chance.will {'snow'},
+      20.percent.chance.will {'sleet'},
+      8.percent.chance.will {'sun'},
+      2.percent.chance.will {'knives'}
+    )
 
 Running examples and specs
 ----------------
