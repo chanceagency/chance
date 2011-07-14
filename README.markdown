@@ -1,4 +1,5 @@
-= Chance
+Chance
+=========
 
 Chance is a little Ruby library for expressing uncertainty in your code. Maybe you always wanted to program with probability?
 
@@ -8,20 +9,20 @@ Date#at_some_point rather than Date#midnight
 Array#pick(percentage) rather than iterating over every element
 
 "maybe" is a Kernel method that randomly evaluates to true or false when it is called.
-@bob.lucky_winner? = maybe
+
+`@bob.lucky_winner? = maybe`
 # => true
-@chauncey.lucky_winner? = maybe
+`@chauncey.lucky_winner? = maybe`
 # => false
 
 When supplied with a block, it will call it. Or not. Half of the time it just returns nil. For example
 
-maybe {rotate_logs}
+`maybe {rotate_logs}`
 
 By default, maybe is 50/50.  You can also use "probably", "rarely" and "almost_never", or just create your own Chance object like so:
 
-30.percent.chance.of { "rain" }
+`30.percent.chance.of { "rain" }`
 
-== Running examples ==
-If you have the bundler gem installed, just run
-
-bundle exec rake
+Running examples
+----------------
+Make sure you have Bundler installed- then run  `bundle exec rake`.

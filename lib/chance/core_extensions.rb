@@ -34,13 +34,6 @@ class String
     Percentage.new((second / first) * 100)
   end
 end
-#
-# class Date
-#   def at_some_point
-#     (at_midnight..tomorrow.at_midnight).to_a.rand
-#   end
-#   alias :whenever :at_some_point
-# end
 
 class Array
   def random
@@ -57,9 +50,18 @@ class Array
   end
 
   def pick_about(percentage)
-    select do |element|
-      percentage.chance.happens?
-    end
+    select {|element| percentage.chance.happens? }
   end
 
+end
+
+class Range
+  def random
+    step_to, i = rand(count), 0
+
+    step do |obj|
+      return obj if i == step_to
+      i += 1
+    end
+  end
 end

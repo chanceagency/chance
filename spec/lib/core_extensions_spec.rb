@@ -62,6 +62,20 @@ describe "Extensions to core classes;" do
         a.should include(a.random)
       end
     end
-
   end
+
+  context "Range" do
+    describe "#random" do
+      it "steps through the range and returns a random element from a numeric range" do
+        numeric_range = 1..10
+        numeric_range.should include numeric_range.random
+      end
+
+      it "steps through the range and returns a random element from a range of strings" do
+        string_range = 'a'..'z'
+        string_range.should include string_range.random
+      end
+    end
+  end
+
 end
