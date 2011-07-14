@@ -65,3 +65,10 @@ class Range
     end
   end
 end
+
+class Date
+  def at_some_point
+    (at_midnight..tomorrow.at_midnight).to_a.rand
+  end
+  alias :whenever :at_some_point
+end

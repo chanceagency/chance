@@ -78,4 +78,20 @@ describe "Extensions to core classes;" do
     end
   end
 
+  context "Date" do
+    describe "#at_some_point" do
+      it "returns a Datetime on that Date" do
+        today = Date.today
+        whenever = today.at_some_point
+        whenever.should be_gt today.floor
+        whenever.should be_lt today.ceil
+      end
+
+      it "is different on subsequent calls" do
+        today = Date.today
+        today.at_some_point.should_not equal(today.at_some_point)
+      end
+    end
+  end
+
 end
