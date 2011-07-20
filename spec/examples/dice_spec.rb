@@ -6,3 +6,4 @@ describe Die do
     (1..6).should include(@d6.roll)
   end
 end
+

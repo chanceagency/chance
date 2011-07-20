@@ -59,9 +59,21 @@ describe "Extensions to core classes;" do
     describe "#random" do
       it "returns a randomly selected element" do
         a = [1,2,3]
-        a.should include(a.random)
+        a.should include a.random
       end
     end
+
+    describe "#random_pop" do
+      it "removes a randomly selected element and returns it" do
+        a = [1,2,3]
+        a.size.should be 3
+
+        popped = a.random_pop
+        a.size.should be 2
+        a.should_not include popped
+      end
+    end
+
   end
 
   context "Range" do

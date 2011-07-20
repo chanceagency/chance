@@ -40,6 +40,10 @@ class Array
     self[rand(length)]
   end
 
+  def random_pop
+    delete_at rand(length)
+  end
+
   def pick(percent)
     picks, percentage = [], percent.of(length).round
     while picks.length < percentage
