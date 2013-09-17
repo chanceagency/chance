@@ -22,6 +22,20 @@ describe Chance do
     @chance.should be < @good_chance
   end
 
+  it "should be identical to another very similar Chance" do
+    begin
+      @same_chance = 50.percent.chance
+    end while @same_chance.happens? != @chance.happens
+    @chance.identical?(@same_chance).should be true
+  end
+
+  it "should not be identical to another sligthly different Chance" do
+    begin
+      @different_chance = 50.percent.chance
+    end while @different_chance.happens? == @chance.happens
+    @chance.identical?(@different_chance).should be false
+  end
+
   context "case statement" do
     it "renders a single outcome" do
       outcome = Chance.case(

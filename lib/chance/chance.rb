@@ -60,7 +60,7 @@ class Chance
   end
 
   def identical(other_chance)
-    self == other_chance && self.happens? == other.happens?
+    self == other_chance && self.happens? == other_chance.happens?
   end
   alias :identical? :identical
 
