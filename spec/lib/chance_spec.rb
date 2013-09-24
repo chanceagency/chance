@@ -29,7 +29,7 @@ describe Chance do
     @chance.identical?(@same_chance).should be true
   end
 
-  it "should not be identical to another sligthly different Chance" do
+  it "should not be identical to another slightly different Chance" do
     begin
       @different_chance = 50.percent.chance
     end while @different_chance.happens? == @chance.happens
