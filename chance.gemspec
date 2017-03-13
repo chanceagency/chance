@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Patrick Ewing"]
   s.email       = ["patrick.henry.ewing@gmail.com"]
-  s.homepage    = "https://github.com/hoverbird/chance"
+  s.homepage    = "https://chanceagency.com/chance"
   s.summary     = "Programming with probability.  YAGNI certitude."
-  s.description = "Chance is a little Ruby library for expressing uncertainty in your code. Maybe you always wanted to program with probability?"
+  s.description = "Chance is a code library for expressing uncertainty in your code. Maybe you always wanted to program with probability?"
 
   s.rubyforge_project = "chance"
 

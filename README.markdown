@@ -1,9 +1,9 @@
 Chance
 =========
 
-Chance is a little Ruby library for expressing uncertainty in your code. Maybe you always wanted to program with probability?
+Chance is a library for exploring uncertainty in code. Maybe you always wanted to program with probability?
 
-The idea originated with Numeric#percent and Kernel#maybe, which Marcel Molina posted to Projectionist, a tumblelog.  This led to various snippets for executing code in a fuzzier way than usual.  You get such handy, wishy-washy methods as:
+The idea originated with Numeric#percent and Kernel#maybe, which Marcel Molina posted to Projectionist, a tumblelog.  This led to various snippets for executing code in a fuzzier way than usual, and this library has since been used in the production of the game Firewatch and several others.  You get such handy, wishy-washy methods as:
 
 Date#at_some_point rather than Date#midnight
 Array#pick(percentage) rather than iterating over every element
@@ -41,3 +41,13 @@ Chance Cases take any number of args, each one being a probability statement wit
 Running examples and specs
 ----------------
 Check out the specs for a better idea of how to use Chance. Make sure you have Bundler installed- then run  `bundle exec rake`.
+
+Game Dev
+----------------
+As we've found in our experience making games like Firewatch, Chance is perfect for use in making video games— it's an insanely easy to read and use DSL for introducing uncertainty into games. For example, the weather system above is a succinct form of the logic you'd find running the hourly weather cycles in a game like _Breath of the Wild_. See `weather.rb` for more examples!
+
+LICENSE
+----------------
+LICENSE for the copying and use of this code is "MIT-Alike" the file `COPYING` for license details.
+
+"CHANCE" is Copyright (c) 2008—2017 Chance/Agency, All Rights Reserved
