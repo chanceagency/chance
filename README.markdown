@@ -1,7 +1,7 @@
 Chance
 =========
 
-Chance is a library for exploring uncertainty in code. Maybe you always wanted to program with probability?
+Chance is a library for exploring uncertainty in code. Maybe you always wanted to program with probability, to be boldly indecisive, to roll the dice without scratching your head? That's what we're all about here.
 
 The idea originated with Numeric#percent and Kernel#maybe, which Marcel Molina posted to Projectionist, a tumblelog.  This led to various snippets for executing code in a fuzzier way than usual, and this library has since been used in the production of the game Firewatch and several others.  You get such handy, wishy-washy methods as:
 
@@ -34,8 +34,8 @@ Chance Cases take any number of args, each one being a probability statement wit
     outcome = Chance.case(
       70.percent.chance.will {'snow'},
       20.percent.chance.will {'sleet'},
-      8.percent.chance.will {'sun'},
-      2.percent.chance.will {'knives'}
+      8.percent.chance.will  {'sun'},
+      1.percent.chance.will  {'knives'}
     )
 
 Running examples and specs
@@ -44,7 +44,9 @@ Check out the specs for a better idea of how to use Chance. Make sure you have B
 
 Game Dev
 ----------------
-As we've found in our experience making games like Firewatch, Chance is perfect for use in making video games— it's an insanely easy to read and use DSL for introducing uncertainty into games. For example, the weather system above is a succinct form of the logic you'd find running the hourly weather cycles in a game like _Breath of the Wild_. See `weather.rb` for more examples!
+As we've found in our experience making games like Firewatch, Chance is perfect for use in making video games— it's an insanely easy to read and use DSL for introducing uncertainty into games. Basically, anywhere a random number generator might make your code harder to understand, Chance is a good fit.
+
+For example, the weather system above is a succinct form of the logic you'd find running the hourly weather cycles in a game like _Breath of the Wild_. See `weather.rb` for more examples!
 
 LICENSE
 ----------------

@@ -2,6 +2,7 @@ class SchroedingerCat
   def initialize
     @alive = nil
   end
+  
   def alive?
     @alive ||= maybe
   end
